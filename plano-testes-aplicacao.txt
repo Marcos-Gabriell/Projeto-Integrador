@@ -1,0 +1,22 @@
+Plano de testes (validar cenarios de SUCESSO e ERRO)
+
+criar nomes dos testes, deve ser pelo menos 2 testes para cada função
+teste de sucesso e de erro
+
+1 - cadastro de item
+- nome : cadastroDeItemRetornaSucesso
+- nome : cadastroDeItemRetornoErro
+- nome : cadastroDeItemDadosRepetidosSucesso
+- nome : cadastroDeItemDadosRepetidosErro
+
+2 - editar dados item
+- nome : editarDadosItemSucesso
+- nome : editarDadosItemErro
+
+3 - excluir dados item
+- nome : excluirDadosItemSucesso
+- nome : excluirDadosItemErro
+
+4 - listar dados item
+- nome : listarDadosItemSucesso
+- nome : listarDadosItemErro

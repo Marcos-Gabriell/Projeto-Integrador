@@ -37,20 +37,33 @@ public class Item {
     @Column(name = "preco", nullable = false, columnDefinition = "DECIMAL(10,5)")
     private BigDecimal preco;
 
+<<<<<<< HEAD
     @Column(name = "ativo", nullable = false)
     private String ativo;
+=======
+    @Column(name = "status", nullable = false)
+    private String status;
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
 
     public Item() {
 
     }
 
+<<<<<<< HEAD
     public Item(Integer id, String nomeItem, String categoria, BigDecimal quantidade, BigDecimal preco, String ativo) {
+=======
+    public Item(Integer id, String nomeItem, String categoria, BigDecimal quantidade, BigDecimal preco, String status) {
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
         this.id = id;
         this.nomeItem = nomeItem;
         this.categoria = categoria;
         this.quantidade = quantidade;
         this.preco = preco;
+<<<<<<< HEAD
         this.ativo = ativo;
+=======
+        this.status = status;
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
     }
 
     public Integer getId() {
@@ -93,12 +106,21 @@ public class Item {
         this.preco = preco;
     }
 
+<<<<<<< HEAD
     public String getAtivo() {
         return ativo;
     }
 
     public void setAtivo(String ativo) {
         this.ativo = ativo;
+=======
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
     }
 
 }

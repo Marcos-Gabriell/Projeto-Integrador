@@ -1,6 +1,40 @@
 Manifest-Version: 1.0
 Build-Jdk-Spec: 17
+<<<<<<< HEAD
 Implementation-Title: projeto-integrador
 Implementation-Version: 0.0.1-SNAPSHOT
+=======
+Class-Path: spring-boot-starter-web-3.2.1.jar spring-boot-starter-3.2.1.
+ jar spring-boot-3.2.1.jar spring-boot-autoconfigure-3.2.1.jar spring-bo
+ ot-starter-logging-3.2.1.jar logback-classic-1.4.14.jar logback-core-1.
+ 4.14.jar log4j-to-slf4j-2.21.1.jar log4j-api-2.21.1.jar jul-to-slf4j-2.
+ 0.9.jar jakarta.annotation-api-2.1.1.jar snakeyaml-2.2.jar spring-boot-
+ starter-json-3.2.1.jar jackson-databind-2.15.3.jar jackson-annotations-
+ 2.15.3.jar jackson-core-2.15.3.jar jackson-datatype-jdk8-2.15.3.jar jac
+ kson-datatype-jsr310-2.15.3.jar jackson-module-parameter-names-2.15.3.j
+ ar spring-boot-starter-tomcat-3.2.1.jar tomcat-embed-core-10.1.17.jar t
+ omcat-embed-el-10.1.17.jar tomcat-embed-websocket-10.1.17.jar spring-we
+ b-6.1.2.jar spring-beans-6.1.2.jar micrometer-observation-1.12.1.jar mi
+ crometer-commons-1.12.1.jar spring-webmvc-6.1.2.jar spring-aop-6.1.2.ja
+ r spring-context-6.1.2.jar spring-expression-6.1.2.jar spring-boot-star
+ ter-thymeleaf-3.2.1.jar thymeleaf-spring6-3.1.2.RELEASE.jar thymeleaf-3
+ .1.2.RELEASE.jar attoparser-2.0.7.RELEASE.jar unbescape-1.1.6.RELEASE.j
+ ar slf4j-api-2.0.9.jar spring-boot-starter-data-jpa-3.2.1.jar spring-bo
+ ot-starter-aop-3.2.1.jar aspectjweaver-1.9.21.jar spring-boot-starter-j
+ dbc-3.2.1.jar HikariCP-5.0.1.jar spring-jdbc-6.1.2.jar hibernate-core-6
+ .4.1.Final.jar jakarta.persistence-api-3.1.0.jar jakarta.transaction-ap
+ i-2.0.1.jar jboss-logging-3.5.3.Final.jar hibernate-commons-annotations
+ -6.0.6.Final.jar jandex-3.1.2.jar classmate-1.6.0.jar byte-buddy-1.14.1
+ 0.jar jaxb-runtime-4.0.4.jar jaxb-core-4.0.4.jar angus-activation-2.0.1
+ .jar txw2-4.0.4.jar istack-commons-runtime-4.1.2.jar jakarta.inject-api
+ -2.0.1.jar antlr4-runtime-4.13.0.jar spring-data-jpa-3.2.1.jar spring-d
+ ata-commons-3.2.1.jar spring-orm-6.1.2.jar spring-tx-6.1.2.jar spring-a
+ spects-6.1.2.jar mysql-connector-java-8.0.23.jar protobuf-java-3.11.4.j
+ ar jakarta.xml.bind-api-4.0.1.jar jakarta.activation-api-2.1.2.jar spri
+ ng-core-6.1.2.jar spring-jcl-6.1.2.jar
+Implementation-Title: projeto-integrador
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: com.projeto.Principal
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
 Created-By: Maven Integration for Eclipse
 

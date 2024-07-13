@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <title>Projeto Integrador</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
@@ -164,3 +165,257 @@
 </body>
 
 </html>
+=======
+	<meta charset="UTF-8">
+	<title>Projeto Integrador</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<main role="main" class="col-md-10 col-lg-8 mx-auto px-4 mt-4">
+				<div class="card text-center mb-4">
+					<div class="card-body">
+						<h1 class="display-4 welcome-text">Projeto Integrador: Sistema de Gerenciamento de Estoque</h1>
+					</div>
+				</div>
+
+				<div class="mb-4">
+					<div class="row">
+						<div class="col-md-4 mb-2">
+							<input type="text" class="form-control" placeholder="Digite informações para pesquisa"
+								id="campoPesquisa">
+						</div>
+						<div class="col-md-4 mb-2">
+							<select class="form-control" id="botaoFiltroSelecaoPesquisa">
+								<option value="">Selecione Filtro de Pesquisa</option>
+								<option value="nomeItem">Nome do Item</option>
+								<option value="categoria">Categoria do Item</option>
+								<option value="status">Status</option>
+							</select>
+						</div>
+						<div class="col-md-4 mb-2">
+							<button class="btn btn-primary w-100" id="botaoPesquisar">Pesquisar</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center mt-4">
+					<h2 class="section-title">Lista de Items</h2>
+					<table id="tabelaEstoque" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Nome do Item</th>
+								<th>Categoria</th>
+								<th>Quantidade</th>
+								<th>Preço</th>
+								<th>Status</th>
+								<th>Opções</th>
+							</tr>
+						</thead>
+						<tbody id="tabelaItemEstoque">
+							<tr th:each="item : ${listaItemsEstoque}">
+								<td th:text="${item.nomeItem}"></td>
+								<td th:text="${item.categoria}"></td>
+								<td th:text="${item.quantidade}"></td>
+								<td th:text="${item.preco}"></td>
+								<td th:text="${item.status}"></td>
+								<td>
+									<button class="btn btn-warning btn-sm botaoEditarItem" data-toggle="modal"
+										data-target="#modalEditarRegistro" th:data-id="${item.id}"
+										th:data-nomeitem="${item.nomeItem}" th:data-categoria="${item.categoria}"
+										th:data-quantidade="${item.quantidade}" th:data-preco="${item.preco}"
+										th:data-status="${item.status}">
+										Editar
+									</button>
+									<form th:action="@{/excluir-item/{id}(id=${item.id})}" method="post"
+										class="d-inline">
+										<input type="hidden" name="_method" value="DELETE" />
+										<button type="submit"
+											class="btn btn-danger btn-sm botaoExcluirItem">Excluir</button>
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="text-center mt-4">
+					<button class="btn btn-success" id="botaoNovoItem" data-toggle="modal"
+						data-target="#modalNovoRegistro">Novo Registro</button>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<!-- criação do modal para Novo Registro -->
+	<div class="modal fade" id="modalNovoRegistro" tabindex="-1" role="dialog" aria-labelledby="modalNovoRegistroLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalNovoRegistroLabel">Novo Registro</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="formNovoRegistro" th:action="@{/novo-registro}" method="post">
+						<div class="form-group">
+							<label for="nomeItem">Nome do Item</label>
+							<input type="text" class="form-control" id="nomeItem" name="nomeItem" required>
+						</div>
+						<div class="form-group">
+							<label for="categoria">Categoria</label>
+							<input type="text" class="form-control" id="categoria" name="categoria" required>
+						</div>
+						<div class="form-group">
+							<label for="quantidade">Quantidade</label>
+							<input type="number" class="form-control" id="quantidade" name="quantidade" required>
+						</div>
+						<div class="form-group">
+							<label for="preco">Preço</label>
+							<input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
+						</div>
+						<div class="form-group">
+							<label for="status">Status</label>
+							<select class="form-control" id="status" name="status" required>
+								<option value="Disponível">Disponível</option>
+								<option value="Indisponível">Indisponível</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- criação do modal para Editar Registro -->
+	<div class="modal fade" id="modalEditarRegistro" tabindex="-1" role="dialog"
+		aria-labelledby="modalEditarRegistroLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalEditarRegistroLabel">Editar Registro</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="formEditarRegistro" th:action="@{/editar-item}" method="post">
+						<input type="hidden" id="editId" name="id">
+						<div class="form-group">
+							<label for="editNomeItem">Nome do Item</label>
+							<input type="text" class="form-control" id="editNomeItem" name="nomeItem" required>
+						</div>
+						<div class="form-group">
+							<label for="editCategoria">Categoria</label>
+							<input type="text" class="form-control" id="editCategoria" name="categoria" required>
+						</div>
+						<div class="form-group">
+							<label for="editQuantidade">Quantidade</label>
+							<input type="number" class="form-control" id="editQuantidade" name="quantidade" required>
+						</div>
+						<div class="form-group">
+							<label for="editPreco">Preço</label>
+							<input type="number" class="form-control" id="editPreco" name="preco" step="0.01" required>
+						</div>
+						<div class="form-group">
+							<label for="editAtivo">Status</label>
+							<select class="form-control" id="editAtivo" name="status" required>
+								<option value="Disponível">Disponível</option>
+								<option value="Indisponível">Indisponível</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+
+			// Função para mostrar os dados de edição
+			$(document).on("click", ".botaoEditarItem", function () {
+				var id = $(this).data('id');
+				var nomeItem = $(this).data('nomeitem');
+				var categoria = $(this).data('categoria');
+				var quantidade = $(this).data('quantidade');
+				var preco = $(this).data('preco');
+				var status = $(this).data('status');
+
+				$("#editId").val(id);
+				$("#editNomeItem").val(nomeItem);
+				$("#editCategoria").val(categoria);
+				$("#editQuantidade").val(quantidade);
+				$("#editPreco").val(preco);
+				$("#editStatus").val(status);
+
+				$('#modalEditarRegistro').modal('show');
+			});
+
+			// Função para excluir um item
+			$(document).on("click", ".botaoExcluirItem", function () {
+				var form = $(this).closest("form");
+				if (confirm("Tem certeza que deseja excluir este item?")) {
+					$.ajax({
+						url: form.attr('action'),
+						type: 'POST',
+						data: {_method: 'DELETE'},
+						success: function (result) {
+							window.location.href = "/home";
+						},
+						error: function (err) {
+							alert("Erro ao excluir item: " + err.responseText);
+						}
+					});
+				}
+			});
+		});
+
+		// Filtrar itens
+		$("#botaoPesquisar").click(function () {
+			var campo = $("#botaoFiltroSelecaoPesquisa").val();
+			var valor = $("#campoPesquisa").val();
+			$.get("/filtrar", {campo: campo, valor: valor}, function (items) {
+				var tabelaBody = $("#tabelaItemEstoque");
+				tabelaBody.empty();
+				$.each(items, function (index, item) {
+					tabelaBody.append('<tr>' +
+						'<td>' + item.nomeItem + '</td>' +
+						'<td>' + item.categoria + '</td>' +
+						'<td>' + item.quantidade + '</td>' +
+						'<td>' + item.preco + '</td>' +
+						'<td>' + item.status + '</td>' +
+						'<td>' +
+						'<button class="btn btn-warning btn-sm botaoEditarItem" data-toggle="modal"' +
+						'data-target="#modalEditarRegistro" data-id="' + item.id + '"' +
+						'data-nomeitem="' + item.nomeItem + '" data-categoria="' + item.categoria + '"' +
+						'data-quantidade="' + item.quantidade + '" data-preco="' + item.preco + '"' +
+						'data-status="' + item.status + '">Editar</button>' +
+						'<form th:action="@{/excluir-item/{id}(id=' + item.id + ')}" method="post"' +
+						'class="d-inline"><input type="hidden" name="_method" value="DELETE" />' +
+						'<button type="submit" class="btn btn-danger btn-sm botaoExcluirItem">Excluir</button>' +
+						'</form>' +
+						'</td>' +
+						'</tr>');
+				});
+			});
+		});
+
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+>>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)

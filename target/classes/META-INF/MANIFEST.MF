@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
 Build-Jdk-Spec: 17
-<<<<<<< HEAD
-Implementation-Title: projeto-integrador
-Implementation-Version: 0.0.1-SNAPSHOT
-=======
 Class-Path: spring-boot-starter-web-3.2.1.jar spring-boot-starter-3.2.1.
  jar spring-boot-3.2.1.jar spring-boot-autoconfigure-3.2.1.jar spring-bo
  ot-starter-logging-3.2.1.jar logback-classic-1.4.14.jar logback-core-1.
@@ -24,17 +20,16 @@ Class-Path: spring-boot-starter-web-3.2.1.jar spring-boot-starter-3.2.1.
  dbc-3.2.1.jar HikariCP-5.0.1.jar spring-jdbc-6.1.2.jar hibernate-core-6
  .4.1.Final.jar jakarta.persistence-api-3.1.0.jar jakarta.transaction-ap
  i-2.0.1.jar jboss-logging-3.5.3.Final.jar hibernate-commons-annotations
- -6.0.6.Final.jar jandex-3.1.2.jar classmate-1.6.0.jar byte-buddy-1.14.1
- 0.jar jaxb-runtime-4.0.4.jar jaxb-core-4.0.4.jar angus-activation-2.0.1
- .jar txw2-4.0.4.jar istack-commons-runtime-4.1.2.jar jakarta.inject-api
- -2.0.1.jar antlr4-runtime-4.13.0.jar spring-data-jpa-3.2.1.jar spring-d
- ata-commons-3.2.1.jar spring-orm-6.1.2.jar spring-tx-6.1.2.jar spring-a
- spects-6.1.2.jar mysql-connector-java-8.0.23.jar protobuf-java-3.11.4.j
- ar jakarta.xml.bind-api-4.0.1.jar jakarta.activation-api-2.1.2.jar spri
- ng-core-6.1.2.jar spring-jcl-6.1.2.jar
+ -6.0.6.Final.jar jandex-3.1.2.jar classmate-1.6.0.jar jaxb-runtime-4.0.
+ 4.jar jaxb-core-4.0.4.jar angus-activation-2.0.1.jar txw2-4.0.4.jar ist
+ ack-commons-runtime-4.1.2.jar jakarta.inject-api-2.0.1.jar antlr4-runti
+ me-4.13.0.jar spring-data-jpa-3.2.1.jar spring-data-commons-3.2.1.jar s
+ pring-orm-6.1.2.jar spring-tx-6.1.2.jar spring-aspects-6.1.2.jar mysql-
+ connector-java-8.0.23.jar protobuf-java-3.11.4.jar jakarta.xml.bind-api
+ -4.0.1.jar jakarta.activation-api-2.1.2.jar spring-core-6.1.2.jar sprin
+ g-jcl-6.1.2.jar byte-buddy-1.14.10.jar
 Implementation-Title: projeto-integrador
 Implementation-Version: 0.0.1-SNAPSHOT
 Main-Class: com.projeto.Principal
->>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
 Created-By: Maven Integration for Eclipse
 

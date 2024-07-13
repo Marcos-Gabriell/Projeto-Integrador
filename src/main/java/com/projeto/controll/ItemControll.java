@@ -5,15 +5,6 @@
  */
 package com.projeto.controll;
 
-<<<<<<< HEAD
-import ch.qos.logback.core.model.Model;
-import com.projeto.model.Item;
-import com.projeto.service.ItemJPA;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-=======
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +21,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.projeto.model.Item;
 import com.projeto.service.ItemService;
->>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
 
 /**
  *
@@ -39,24 +29,6 @@ import com.projeto.service.ItemService;
 @Controller
 public class ItemControll {
 
-<<<<<<< HEAD
-    private final ItemJPA itemJPA;
-
-    @Autowired
-    public ItemControll(ItemJPA itemJPA) {
-        this.itemJPA = itemJPA;
-    }
-
-    @GetMapping("/")
-    public String telaPrincipalHome() {
-        return "redirect:/home";
-    }
-
-    @GetMapping("/home")
-    public String home() {
-        return "home";
-    }
-=======
 	@Autowired
 	private ItemService itemService;
 
@@ -110,5 +82,4 @@ public class ItemControll {
 		return "redirect:/home";
 	}
 
->>>>>>> 003551b (funcionalidades de cadastro, edição, exclusão, pesquisa geral e pesquisa com filtros)
 }

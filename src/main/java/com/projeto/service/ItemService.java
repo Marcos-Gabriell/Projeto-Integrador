@@ -25,17 +25,24 @@ public class ItemService {
 	private ItemRepository repo;
 
 	public void inserirItem(Item item) {
+		if (buscarItemPorId(item.getId()).isPresent()) {
+			throw new RuntimeException("Item já existe com ID : " + item.getId());
+		}
 		repo.save(item);
 	}
 
 	public void atualizarItem(Item item) {
-		Optional<Item> resultado = repo.findById(item.getId());
-		if (resultado.isPresent()) {
+		if (buscarItemPorId(item.getId()).isPresent()) {
 			repo.save(item);
+		} else {
+			throw new RuntimeException("Item inexistente para atualizar com ID : " + item.getId());
 		}
 	}
 
 	public void excluirItem(Integer id) {
+		if (!buscarItemPorId(id).isPresent()) {
+			throw new RuntimeException("Item ID : " + id + " nao encontrado");
+		}
 		repo.deleteById(id);
 	}
 

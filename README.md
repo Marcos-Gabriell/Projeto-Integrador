@@ -17,12 +17,11 @@ Em desenvolvimento
 - Spring MVC
 - Spring Data JPA
 - MySQL
-- Loombok
-- Git
 
 ## Time de Desenvolvedores
-- Marcos Gabriel (Marcos-Gabriell)
-
+- João Silva (joaosilva)
+- Maria Oliveira (mariaoliveira)
+- Carlos Santos (carlossantos)
 
 ## Objetivo do Software
 O Sistema de Gerenciamento de Estoque tem como objetivo facilitar o controle e a gestão de produtos em estoque de uma empresa. Ele oferecerá funcionalidades para listar, filtrar, pesquisar, editar e excluir produtos, além de possibilitar a adição de novos produtos ao estoque.
